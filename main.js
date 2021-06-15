@@ -14,7 +14,6 @@ Webcam.set({
    function snap(){
     Webcam.snap(function(data_uri){
       document.getElementById("result").innerHTML ='<img id="capture" src = "' + data_uri + '"/>'
-      check();
     });
   };
 
@@ -26,8 +25,8 @@ console.log("modelLoaded");
 
 function speak(){
 var synth = window.speechSynthesis;
-speak_data_1 = "the most accurate prediction is" + prediction_accurate;
-speak_data_2 = "and the second most accurate prediction is" + prediction-accurate;
+speak_data_1 = "the most accurate prediction is" + prediction_1;
+speak_data_2 = "and the second most accurate prediction is" + prediction_2;
 var utterThis = new speechSynthesisisUtterance(speak_data_1 + speak_data_2);
 synth.speak(utterThis);
 };
@@ -36,7 +35,7 @@ synth.speak(utterThis);
   
   function check(){
 var img = document.getElementById('capture');
-classifier.classify(img,gotResult);
+classifier.classify(img ,gotResult);
   };
 
 function gotResult(error, Results){
