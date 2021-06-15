@@ -1,3 +1,5 @@
+prediction_1 ="";
+prediction_2 = "";
 Webcam.set({
     width : 400,
     height: 400,
@@ -8,8 +10,8 @@ Webcam.set({
   var camera = document.getElementById("camera");
   
   Webcam.attach('#camera');
-  
-  function take_snapshot(){
+  // function was named take_snapshot but the index.html name was snap()
+   function snap(){
     Webcam.snap(function(data_uri){
       document.getElementById("result").innerHTML ='<img id="capture" src = "' + data_uri + '"/>'
       check();
@@ -37,7 +39,7 @@ var img = document.getElementById('capture');
 classifier.classify(img,gotResult);
   };
 
-function gotResult(error,Results){
+function gotResult(error, Results){
 if (error){
 console.error(error);
 }else {
